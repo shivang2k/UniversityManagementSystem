@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+   <body>
+     <H1>Welcome admin</H1>
+     <h2>Enter Details</h2>
+     <form action = "http://localhost:5000/login_admin/student" method = "POST">
+        <p>Student Registeration Number <input type = "text" name = "rid" /></p>
+        <p><input type = "submit" value = "submit" /></p>
+     </form>
+     <br><hr><br>
+     <form action = "http://localhost:5000/login_admin/faculty" method = "POST">
+        <p>Faculty ID <input type = "text" name = "fid" /></p>
+        <p><input type = "submit" value = "submit" /></p>
+     </form>
+
+     {% if result and students %}
+     <h1>Details of {{result[0][1]}} {{result[0][2]}}</h1>
+      <table border = 1>
+        <tr>
+          <th>Registration Number</th>
+          <th>Name</th>
+          <th>CGPA</th>
+          <th>Semester</th>
+          <th>Fees</th>
+          <th>Department</th>
+          <th>Parent ID</th>
+          <th>Father Name</th>
+          <th>Mother Name</th>
+          <th>Email ID</th>
+          <th>Mobile Number</th>
+          <th>Mobile Number</th>
+        </tr>
+        <tr>
+          <td>{{result[0][0]}}</td>
+          <td>{{result[0][1]}} {{result[0][2]}}</td>
+          <td>{{result[0][3]}}</td>
+          <td>{{result[0][5]}}</td>
+          <td>{{result[0][6]}}</td>
+          <td>{{result[0][7]}}</td>
+          <td>{{result[0][8]}}</td>
+          <td>{{result[0][9]}}</td>
+          <td>{{result[0][10]}}</td>
+          <td>{{result[0][13]}}</td>
+          <td>{{result[0][11]}}</td>
+          <td>{{result[0][12]}}</td>
+        </tr>
+      </table>
+      {% endif %}
+
+      <br>
+     {% if result and faculty %}
+     <h2>Details of Faculty </h2>
+      <table border = 1>
+        <tr>
+          <th>FacultyID</th>
+          <th>Name</th>
+          <th>Department</th>
+          <th>Designation</th>
+          <th>Salary</th>
+        </tr>
+        <tr>
+          <td>{{result[0][0]}}</td>
+          <td>{{result[0][1]}} {{result[0][2]}}</td>
+          <td>{{result[0][3]}}</td>
+          <td>{{result[0][4]}}</td>
+          <td>{{result[0][5]}}</td>
+        </tr>
+      </table>
+      <h2>Subjects {{result[0][1]}} {{result[0][2]}} Teach</h2>
+        <table border = 1>
+            {% for key in result[1] %}
+                        {% for item in key %}
+                          <tr>
+                            <td> {{ item }} </td>
+                          </tr>
+                        {% endfor %}
+            {% endfor %}
+        </table>
+      {% endif %}
+   </body>
+</html>
+
+
+<!--          {% for key in result %}
+            {% for item in key %}
+              <tr>
+                <td> {{ item }} </td>
+              </tr>
+              {% endfor %}
+         {% endfor %} -->

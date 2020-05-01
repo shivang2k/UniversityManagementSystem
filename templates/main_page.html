@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+   <body>
+     <H1>Welcome {{result[0][1]}} {{result[0][2]}}</H1>
+     <h2>Here are your Details</h2>
+      <table border = 1>
+        <tr>
+          <th>Registration Number</th>
+          <th>Name</th>
+          <th>CGPA</th>
+          <th>Semester</th>
+          <th>Fees</th>
+        </tr>
+        <tr>
+          <td>{{result[0][0]}}</td>
+          <td>{{result[0][1]}} {{result[0][2]}}</td>
+          <td>{{result[0][4]}}</td>
+          <td>{{result[0][9]}}</td>
+          <td>{{result[0][-1]}}</td>
+        </tr>
+      </table>
+      <br>
+     <h2>Here are your Parents Details</h2>
+       <table border = 1>
+         <tr>
+           <th>Parent ID</th>
+           <th>Father Name</th>
+           <th>Mother Name</th>
+           <th>Email ID</th>
+         </tr>
+         <tr>
+           <td>{{result[1][0]}}</td>
+           <td>{{result[1][1]}}</td>
+           <td>{{result[1][2]}}</td>
+           <td>{{result[1][-1]}}</td>
+         </tr>
+       </table>
+
+       <h2>Subjects You Study</h2>
+         <table border = 1>
+             {% for key in result[2] %}
+                         {% for item in key %}
+                           <tr>
+                             <td> {{ item }} </td>
+                           </tr>
+                         {% endfor %}
+             {% endfor %}
+         </table>
+         <h2>Marks you Scored</h2>
+           <table border = 1>
+             <tr>
+               <th> Subject Name </th>
+               <th> Component Name </th>
+               <th> Marks Scored </th>
+               <th> Max marks </th>
+             </tr>
+               {% for key in result[3] %}
+                             <tr>
+                               <td> {{ key[-1] }} </td>
+                               <td> {{ key[0] }} </td>
+                               <td> {{ key[1] }} </td>
+                               <td> {{ key[2] }} </td>
+                             </tr>
+               {% endfor %}
+           </table>
+
+
+   </body>
+</html>
+
+
+<!--          {% for key in result %}
+            {% for item in key %}
+              <tr>
+                <td> {{ item }} </td>
+              </tr>
+              {% endfor %}
+         {% endfor %} -->

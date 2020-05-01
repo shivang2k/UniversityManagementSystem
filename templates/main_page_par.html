@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+   <body>
+     <H1>Welcome Parent</H1>
+     <h2>Here are your wards Details</h2>
+      <table border = 1>
+        <tr>
+          <th>Registration Number</th>
+          <th>Name</th>
+          <th>CGPA</th>
+          <th>Semester</th>
+          <th>Fees</th>
+        </tr>
+        <tr>
+          <td>{{result[0][0]}}</td>
+          <td>{{result[0][1]}} {{result[0][2]}}</td>
+          <td>{{result[0][4]}}</td>
+          <td>{{result[0][9]}}</td>
+          <td>{{result[0][-1]}}</td>
+        </tr>
+      </table>
+      <br>
+      <h2></h2>
+   </body>
+</html>
+
+
+<!--          {% for key in result %}
+            {% for item in key %}
+              <tr>
+                <td> {{ item }} </td>
+              </tr>
+              {% endfor %}
+         {% endfor %} -->

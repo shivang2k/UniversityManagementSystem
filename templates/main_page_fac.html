@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+   <body>
+     <H1>Welcome {{result[0][1]}} {{result[0][2]}}</H1>
+     <h2>Here are your Details</h2>
+      <table border = 1>
+        <tr>
+          <th>faculty ID</th>
+          <th>Name</th>
+          <th>Department</th>
+          <th>Desegnation</th>
+          <th>Salary</th>
+        </tr>
+        <tr>
+          <td>{{result[0][0]}}</td>
+          <td>{{result[0][1]}} {{result[0][2]}}</td>
+          <td>{{result[1][0]}}</td>
+          <td>{{result[1][2]}}</td>
+          <td>{{result[1][1]}}</td>
+        </tr>
+      </table>
+      <br>
+     <h2>Subjects You Teach</h2>
+       <table border = 1>
+           {% for key in result[2] %}
+                       {% for item in key %}
+                         <tr>
+                           <td> {{ item }} </td>
+                         </tr>
+                       {% endfor %}
+           {% endfor %}
+       </table>
+
+       <form action = "http://localhost:5000/login_fac/marks" method = "POST">
+          <p>Student Registeration Number <input type = "text" name = "rid" /></p>
+          <p>Subject ID <input type = "number" name = "sid" /></p>
+          <p>Component <input type = "text" name = "comp" /></p>
+          <p>Marks <input type = "number" name = "m" /></p>
+          <p>MaxMarks <input type = "number" name = "mm" /></p>
+          <p>Semester<input type = "number" name = "sem" /></p>
+          <p><input type = "submit" value = "submit" /></p>
+       </form>
+
+   </body>
+</html>
+
+
+<!--          {% for key in result %}
+            {% for item in key %}
+              <tr>
+                <td> {{ item }} </td>
+              </tr>
+              {% endfor %}
+         {% endfor %} -->
