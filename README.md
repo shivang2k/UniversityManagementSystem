@@ -1,6 +1,6 @@
 # Title - University Management System
 
-# Introduction:
+# Introduction
 
 ### What is Data?
 
@@ -59,7 +59,6 @@ By using start of the art technology, in this case, Python, to build the backend
 
 Since all the major work is done on the backend (Server), the device on which the system will run, will not face any performance issue.
 
-**Detailed explanation of the project in the technical part of the report.**
 
 # Brief Background of the existing Knowledge
 
@@ -83,6 +82,7 @@ A management system is used by any organization in order to maintain the records
 
 # ER Diagram / Relational Schema
 
+![alt text](https://github.com/shivang2k/UniversityManagementSystem/blob/master/ER%20diagram.PNG)
 
 # Distinguishing Features of the project from the current technology
 
